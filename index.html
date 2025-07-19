@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeya Suriya | Developer Portfolio</title>
+  <meta name="description" content="Jeya Suriya - Full Stack Developer Portfolio. Specialized in Flutter, React, Firebase, and scalable backend solutions.">
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            secondary: '#a5b4fc',
+            glass: 'rgba(255,255,255,0.15)',
+            glassDark: 'rgba(30,41,59,0.45)'
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- AOS CDN for scroll animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- Google Fonts for sleeker typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0"></script>
+  <style>
+    body, .font-sans {
+      font-family: 'Inter', 'Poppins', 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+    }
+    .hero-particles {
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.10);
+      animation: floatY 8s ease-in-out infinite alternate;
+    }
+    .particle1 { width: 12px; height: 12px; left: 20%; top: 30%; animation-delay: 0s; }
+    .particle2 { width: 8px; height: 8px; left: 60%; top: 20%; animation-delay: 2s; }
+    .particle3 { width: 10px; height: 10px; left: 80%; top: 60%; animation-delay: 4s; }
+    .particle4 { width: 6px; height: 6px; left: 35%; top: 70%; animation-delay: 1s; }
+    .particle5 { width: 14px; height: 14px; left: 75%; top: 40%; animation-delay: 3s; }
+    @keyframes floatY {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-30px); }
+    }
+    .blob-anim {
+      animation: blobMorph 8s ease-in-out infinite alternate;
+    }
+    @keyframes blobMorph {
+      0%, 100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+      50% { border-radius: 40% 60% 70% 30%/50% 60% 30% 60%; }
+    }
+    .btn-glow {
+      box-shadow: 0 0 0 rgba(99,102,241,0.0);
+      transition: box-shadow 0.3s, background 0.3s, color 0.3s;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 24px 6px #6366f1, 0 2px 8px rgba(99,102,241,0.12);
+      background: #fde047 !important;
+      color: #18181b !important;
+    }
+    .typewriter-blink {
+      display: inline-block;
+      width: 1ch;
+      color: #c4c4c4;
+      animation: blink 1s steps(1) infinite;
+      font-size: 2.2rem;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      .hero-stack-mobile {
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+      .hero-stack-mobile .md\:pr-8 { padding-right: 0 !important; }
+      .hero-stack-mobile .gap-10 { gap: 2rem !important; }
+      .mobile-card {
+        background: rgba(30,41,59,0.85);
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px rgba(99,102,241,0.10);
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .mobile-section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #fde047;
+        letter-spacing: 0.5px;
+      }
+      .mobile-btn-primary {
+        background: linear-gradient(90deg, #6366f1 0%, #fde047 100%) !important;
+        color: #18181b !important;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 999px;
+        box-shadow: 0 2px 12px #6366f1aa;
+        padding: 1rem 0;
+      }
+      .mobile-btn-primary:active {
+        background: #fde047 !important;
+        color: #23272e !important;
+      }
+      .mobile-shadow {
+        box-shadow: 0 4px 24px #6366f122;
+      }
+      .mobile-bounce {
+        animation: bounce 1.2s infinite alternate;
+      }
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+      }
+      .mobile-glass {
+        background: rgba(255,255,255,0.10);
+        backdrop-filter: blur(10px);
+        border-radius: 1.2rem;
+      }
+      .mobile-accent {
+        width: 48px; height: 6px; border-radius: 999px; background: linear-gradient(90deg,#6366f1,#fde047); margin: 0.5rem auto 1.5rem auto;
+      }
+    }
+    /* Hamburger icon animation */
+    .hamburger {
+      transition: transform 0.3s;
+    }
+    .hamburger.open {
+      transform: rotate(90deg);
+    }
+    .mobile-dropdown {
+      transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+      overflow: hidden;
+      box-shadow: 0 8px 32px #6366f1aa;
+      border-radius: 1.2rem;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 font-sans transition-colors duration-300 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-30 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 shadow-lg transition-all duration-300 flex items-center justify-between px-4 md:px-10 py-4">
+    <!-- Logo -->
+    <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-primary drop-shadow">Jeya Suriya</span>
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">About</a>
+      <a href="#skills" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Skills</a>
+      <a href="#projects" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Projects</a>
+      <a href="#contact" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Contact</a>
+    </div>
+    <!-- Hamburger for mobile -->
+    <button id="nav-toggle" class="md:hidden text-slate-100 text-3xl focus:outline-none" aria-label="Open Menu" aria-expanded="false">
+      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </button>
+    <!-- Mobile Menu (right side box) -->
+    <div id="mobile-menu" class="fixed top-16 right-4 w-56 bg-slate-900 rounded-xl shadow-2xl p-6 flex flex-col gap-4 items-start transition-all duration-300 ease-in-out opacity-0 pointer-events-none translate-x-8 md:hidden z-50">
+      <a href="#about" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">About</a>
+      <a href="#skills" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Skills</a>
+      <a href="#projects" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Projects</a>
+      <a href="#contact" class="text-base font-semibold text-slate-100 hover:text-primary transition-colors duration-200 nav-link">Contact</a>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      let menuOpen = false;
+      function openMenu() {
+        navMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-8');
+        navMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        navToggle.setAttribute('aria-expanded', 'true');
+        menuOpen = true;
+      }
+      function closeMenu() {
+        navMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-8');
+        navMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        navToggle.setAttribute('aria-expanded', 'false');
+        menuOpen = false;
+      }
+      navToggle.addEventListener('click', function() {
+        if (!menuOpen) openMenu();
+        else closeMenu();
+      });
+      // Close menu when clicking a link
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      // ESC key closes menu
+      document.addEventListener('keydown', function(e) {
+        if (menuOpen && e.key === 'Escape') closeMenu();
+      });
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between gap-8 md:gap-0 pt-28 pb-12 max-w-7xl mx-auto px-4 sm:px-2 relative overflow-hidden">
+    <!-- Meteoroids accent shapes background (responsive, visually balanced) -->
+    <div class="absolute left-0 top-0 w-full h-full pointer-events-none z-20">
+      <svg class="w-full h-40 sm:h-64 md:h-full translate-x-4 translate-y-2 md:translate-x-32 md:translate-y-8" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="800" cy="80" rx="120" ry="60" fill="#fff" fill-opacity="0.07" filter="url(#blur1)" style="backdrop-filter: blur(8px);"/>
+        <ellipse cx="900" cy="100" rx="120" ry="70" fill="#fff" fill-opacity="0.10" filter="url(#blur2)" style="backdrop-filter: blur(6px);"/>
+        <ellipse cx="350" cy="350" rx="80" ry="40" fill="#fff" fill-opacity="0.08" filter="url(#blur3)" style="backdrop-filter: blur(6px);"/>
+        <ellipse cx="700" cy="250" rx="40" ry="24" fill="#fff" fill-opacity="0.07" filter="url(#blur4)"/>
+        <ellipse cx="1200" cy="90" rx="70" ry="30" fill="#fff" fill-opacity="0.08" filter="url(#blur5)"/>
+        <ellipse cx="200" cy="500" rx="60" ry="28" fill="#fff" fill-opacity="0.06" filter="url(#blur6)"/>
+        <ellipse cx="1350" cy="500" rx="44" ry="20" fill="#fff" fill-opacity="0.07" filter="url(#blur7)"/>
+        <ellipse cx="1000" cy="400" rx="90" ry="40" fill="#fff" fill-opacity="0.06" filter="url(#blur8)"/>
+        <defs>
+          <filter id="blur1" x="680" y="20" width="240" height="120"><feGaussianBlur stdDeviation="18"/></filter>
+          <filter id="blur2" x="780" y="30" width="240" height="140"><feGaussianBlur stdDeviation="18"/></filter>
+          <filter id="blur3" x="270" y="310" width="160" height="80"><feGaussianBlur stdDeviation="12"/></filter>
+          <filter id="blur4" x="660" y="226" width="80" height="48"><feGaussianBlur stdDeviation="10"/></filter>
+          <filter id="blur5" x="1130" y="60" width="140" height="60"><feGaussianBlur stdDeviation="10"/></filter>
+          <filter id="blur6" x="140" y="472" width="120" height="56"><feGaussianBlur stdDeviation="9"/></filter>
+          <filter id="blur7" x="1306" y="480" width="88" height="40"><feGaussianBlur stdDeviation="8"/></filter>
+          <filter id="blur8" x="910" y="360" width="180" height="80"><feGaussianBlur stdDeviation="14"/></filter>
+        </defs>
+      </svg>
+      <!-- Subtle floating particles -->
+      <div class="hero-particles">
+        <div class="particle particle1"></div>
+        <div class="particle particle2"></div>
+        <div class="particle particle3"></div>
+        <div class="particle particle4"></div>
+        <div class="particle particle5"></div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center md:justify-center gap-6 md:gap-8 z-10 md:pr-8 hero-stack-mobile">
+      <div class="mobile-accent md:hidden"></div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-2 leading-tight drop-shadow-xl relative text-center md:text-left" data-aos="fade-right">
+        Hi,<br class="md:hidden"/>
+        <span class="relative inline-block">I'm <span class="text-primary whitespace-nowrap underline-animate">Jeya Suriya</span>
+          <!-- Floating accent dot -->
+          <span class="absolute -right-8 top-1/2 -translate-y-1/2 w-4 h-4 bg-yellow-400 rounded-full shadow-lg animate-pulse"></span>
+        </span>
+      </h1>
+      <!-- Subheading/description -->
+      <p class="text-base sm:text-lg md:text-2xl font-light mb-0 text-center md:text-left" style="color:#c4c4c4;" data-aos="fade-right" data-aos-delay="50">Full Stack Developer &bull; Passionate about building clean UI & smart backends.</p>
+      <div class="flex gap-4 mb-1 md:mb-8 justify-center md:justify-start" data-aos="fade-right" data-aos-delay="200">
+        <a href="https://www.linkedin.com/in/jeya-suriya21/" target="_blank" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/MJ-suriya" target="_blank" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fab fa-github"></i></a>
+        <a href="mailto:suriyajeya555@gmail.com" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <!-- Laptop image for mobile only, between icons and button -->
+      <div class="block md:hidden w-full flex justify-center my-4">
+        <div class="relative flex items-center justify-center w-40 h-40 mobile-glass mobile-shadow">
+          <svg viewBox="0 0 400 260" class="w-32 h-20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow under laptop (glow) -->
+            <ellipse cx="200" cy="250" rx="120" ry="28" fill="#6366f1" opacity="0.22"/>
+            <ellipse cx="200" cy="250" rx="120" ry="18" fill="#000" opacity="0.10"/>
+            <!-- Laptop base (keyboard area) -->
+            <rect x="40" y="180" width="320" height="36" rx="10" fill="#23272e"/>
+            <!-- Touchpad -->
+            <rect x="180" y="200" width="40" height="12" rx="4" fill="#374151"/>
+            <!-- Keyboard keys (rows) -->
+            <rect x="60" y="190" width="280" height="6" rx="2" fill="#374151"/>
+            <rect x="60" y="198" width="60" height="6" rx="2" fill="#374151"/>
+            <rect x="120" y="198" width="60" height="6" rx="2" fill="#374151"/>
+            <rect x="180" y="198" width="60" height="6" rx="2" fill="#374151"/>
+            <rect x="240" y="198" width="60" height="6" rx="2" fill="#374151"/>
+            <!-- Laptop body (bezel) -->
+            <rect x="60" y="40" width="280" height="150" rx="18" fill="#334155" stroke="#23272e" stroke-width="3"/>
+            <!-- Screen gloss -->
+            <rect x="60" y="40" width="280" height="150" rx="18" fill="url(#screenGloss)"/>
+            <!-- Laptop screen -->
+            <rect x="75" y="55" width="250" height="120" rx="8" fill="#18181b"/>
+            <!-- Camera dot -->
+            <circle cx="200" cy="52" r="3" fill="#64748b"/>
+            <!-- </> and curly brace symbols on screen, centered as a group -->
+            <g>
+              <text x="170" y="130" text-anchor="middle" alignment-baseline="middle" font-size="54" font-family="'Segoe UI', Arial, sans-serif" fill="#6366f1" opacity="0.88">&lt;/&gt;</text>
+              <text x="230" y="130" text-anchor="middle" alignment-baseline="middle" font-size="54" font-family="'Segoe UI', Arial, sans-serif" fill="#facc15" opacity="0.82">&#123;&#125;</text>
+            </g>
+            <defs>
+              <linearGradient id="screenGloss" x1="60" y1="40" x2="340" y2="190" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#fff" stop-opacity="0.10"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <a href="#projects" class="w-full md:w-auto px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg shadow-lg btn-glow mobile-btn-primary hover:scale-110 transition-transform duration-200 flex items-center gap-3 justify-center md:justify-start" data-aos="fade-right" data-aos-delay="300">
+        <i class="fa-solid fa-arrow-down"></i>
+        View Projects
+      </a>
+    </div>
+    <!-- Laptop image for desktop only, on the right -->
+    <div class="hidden md:flex w-full md:w-1/2 flex-col items-center justify-center md:justify-center md:items-center relative mt-8 md:mt-0 z-10">
+      <div class="relative flex items-center justify-center w-48 h-48 sm:w-64 sm:h-64 md:w-[28rem] md:h-80 mobile-glass mobile-shadow">
+        <svg viewBox="0 0 400 260" class="w-40 h-28 sm:w-80 sm:h-64 md:w-[28rem] md:h-80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shadow under laptop (glow) -->
+          <ellipse cx="200" cy="250" rx="120" ry="28" fill="#6366f1" opacity="0.22"/>
+          <ellipse cx="200" cy="250" rx="120" ry="18" fill="#000" opacity="0.10"/>
+          <!-- Laptop base (keyboard area) -->
+          <rect x="40" y="180" width="320" height="36" rx="10" fill="#23272e"/>
+          <!-- Touchpad -->
+          <rect x="180" y="200" width="40" height="12" rx="4" fill="#374151"/>
+          <!-- Keyboard keys (rows) -->
+          <rect x="60" y="190" width="280" height="6" rx="2" fill="#374151"/>
+          <rect x="60" y="198" width="60" height="6" rx="2" fill="#374151"/>
+          <rect x="120" y="198" width="60" height="6" rx="2" fill="#374151"/>
+          <rect x="180" y="198" width="60" height="6" rx="2" fill="#374151"/>
+          <rect x="240" y="198" width="60" height="6" rx="2" fill="#374151"/>
+          <!-- Laptop body (bezel) -->
+          <rect x="60" y="40" width="280" height="150" rx="18" fill="#334155" stroke="#23272e" stroke-width="3"/>
+          <!-- Screen gloss -->
+          <rect x="60" y="40" width="280" height="150" rx="18" fill="url(#screenGloss)"/>
+          <!-- Laptop screen -->
+          <rect x="75" y="55" width="250" height="120" rx="8" fill="#18181b"/>
+          <!-- Camera dot -->
+          <circle cx="200" cy="52" r="3" fill="#64748b"/>
+          <!-- </> and curly brace symbols on screen, centered as a group -->
+          <g>
+            <text x="170" y="130" text-anchor="middle" alignment-baseline="middle" font-size="54" font-family="'Segoe UI', Arial, sans-serif" fill="#6366f1" opacity="0.88">&lt;/&gt;</text>
+            <text x="230" y="130" text-anchor="middle" alignment-baseline="middle" font-size="54" font-family="'Segoe UI', Arial, sans-serif" fill="#facc15" opacity="0.82">&#123;&#125;</text>
+          </g>
+          <defs>
+            <linearGradient id="screenGloss" x1="60" y1="40" x2="340" y2="190" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#fff" stop-opacity="0.10"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <script>
+        // Removed Typewriter blink effect for laptop screen
+      </script>
+    </div>
+    <style>
+      .laptop-tilt .laptop-svg {
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+        will-change: transform;
+      }
+    </style>
+    <script>
+      // 3D tilt effect for laptop
+      document.addEventListener('DOMContentLoaded', function() {
+        const tilt = document.querySelector('.laptop-tilt');
+        const svg = tilt?.querySelector('.laptop-svg');
+        if (tilt && svg) {
+          tilt.addEventListener('mousemove', (e) => {
+            const rect = tilt.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateY = ((x - centerX) / centerX) * 15;
+            const rotateX = -((y - centerY) / centerY) * 15;
+            svg.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+          });
+          tilt.addEventListener('mouseleave', () => {
+            svg.style.transform = '';
+          });
+        }
+      });
+    </script>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="max-w-5xl mx-auto py-12 md:py-20 px-4 sm:px-2" data-aos="fade-right">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 w-full text-center md:text-left">About Me <span class="inline-block">👨‍💻</span></h2>
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-10 w-full">
+      <div class="flex-1 flex justify-center md:justify-start w-full mb-6 md:mb-0" data-aos="zoom-in">
+        <img src="photo_2025-01-29_19-44-24.jpg" alt="Professional developer at desk" class="w-48 md:w-72 lg:w-96 rounded-xl shadow-xl object-cover border-2 border-primary/30"/>
+      </div>
+      <div class="flex-1 text-left space-y-4 w-full flex flex-col items-center md:items-start justify-center">
+        <p class="text-base md:text-lg" data-aos="fade-up" data-aos-delay="100">I'm a passionate and results-driven developer with a strong background in building modern web and mobile applications. I specialize in creating robust, user-centric solutions that blend clean design with cutting-edge technology. My expertise spans <span class="font-bold text-primary">full-stack development</span>, <span class="font-bold text-primary">cloud integration</span>, and scalable architectures. I thrive on solving real-world problems, collaborating with teams, and continuously learning the latest in tech to deliver impactful digital experiences.<br/>Currently focused on: <span class="font-bold text-primary">Cloud Solutions</span>, <span class="font-bold text-primary">Advanced Mobile Development</span>, and <span class="font-bold text-primary">UI/UX Best Practices</span> ☁️📱</p>
+        <!-- About Me section button row -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start" data-aos="fade-up" data-aos-delay="200">
+          <a href="assets/JeyaSuriya_Resume.pdf" class="inline-block px-6 py-3 rounded-full bg-primary text-white font-semibold text-base md:text-lg shadow-lg hover:scale-110 hover:bg-yellow-400 hover:text-slate-900 transition-transform duration-200" download><i class="fa-solid fa-download mr-2"></i>Download Resume</a>
+          <a href="#contact" class="inline-block px-6 py-3 rounded-full bg-secondary text-slate-900 font-semibold text-base md:text-lg shadow-lg hover:scale-110 hover:bg-primary hover:text-white transition-transform duration-200"><i class="fa-solid fa-paper-plane mr-2"></i>Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="max-w-5xl mx-auto py-12 md:py-20 px-4 sm:px-2" data-aos="fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10">Skills</h2>
+    <div class="relative">
+      <div class="absolute -left-10 -top-10 w-20 h-20 md:w-32 md:h-32 bg-yellow-400/30 blur-2xl opacity-60 rounded-full float-anim"></div>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 justify-items-center relative z-10">
+        <style>
+          .skill-icon-uniform {
+            width: 4.5rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+          }
+        </style>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-html5"></i></div>
+          <span class="mt-2">HTML</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-css3-alt"></i></div>
+          <span class="mt-2">CSS</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-js"></i></div>
+          <span class="mt-2">JavaScript</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-react"></i></div>
+          <span class="mt-2">React</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="500">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-bootstrap"></i></div>
+          <span class="mt-2">Bootstrap</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="600">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-php"></i></div>
+          <span class="mt-2">PHP</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="700">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-solid fa-database"></i></div>
+          <span class="mt-2">SQL</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="800">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-brands fa-node-js"></i></div>
+          <span class="mt-2">Node.js</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="900">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="2.5em" height="2.5em" fill="currentColor"><path d="M429.5 236.3L291.7 374.1 429.5 512H272l-59.1-59.1-78.8-78.8L272 236.3H429.5zM272 0L16 256l78.8 78.8L429.5 0H272z"/></svg>
+          </div>
+          <span class="mt-2">Flutter</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="1000">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-solid fa-fire"></i></div>
+          <span class="mt-2">Firebase</span>
+        </div>
+        <div class="group flex flex-col items-center" data-aos="zoom-in" data-aos-delay="1100">
+          <div class="skill-icon-uniform text-5xl p-4 rounded-xl bg-glass dark:bg-glassDark backdrop-blur group-hover:scale-125 group-hover:-rotate-6 group-hover:bg-primary group-hover:text-white transition-transform duration-300"><i class="fa-solid fa-database"></i></div>
+          <span class="mt-2">MongoDB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto py-12 md:py-20 px-4 sm:px-2" data-aos="fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10">Projects</h2>
+    <div class="relative">
+      <div class="absolute right-0 -top-10 w-20 h-20 md:w-32 md:h-32 bg-primary/30 blur-2xl opacity-60 rounded-full float-anim"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10">
+        <!-- Project 1 -->
+        <div class="bg-glass dark:bg-glassDark backdrop-blur rounded-2xl shadow-xl p-6 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <img src="img.png" alt="MJDownloader" class="rounded-xl w-full h-40 object-cover mb-4 border-2 border-primary/30 group-hover:border-yellow-400 transition"/>
+          <h3 class="text-xl font-bold mb-2">MJDownloader</h3>
+          <p class="text-sm text-center mb-3">A React Native app for downloading YouTube videos and WhatsApp statuses.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">React Native</span>
+          </div>
+          <div class="flex gap-3">
+            <!-- <a href="#" class="px-4 py-2 rounded bg-primary text-white font-semibold hover:bg-yellow-400 hover:text-slate-900 transition">Live Demo</a> -->
+            <!-- <a href="#" class="px-4 py-2 rounded bg-slate-800 text-white font-semibold hover:bg-primary transition">GitHub</a> -->
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-glass dark:bg-glassDark backdrop-blur rounded-2xl shadow-xl p-6 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:rotate-2 transition-transform duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <img src="img1.png" alt="JS Welding Works" class="rounded-xl w-full h-40 object-cover mb-4 border-2 border-primary/30 group-hover:border-yellow-400 transition"/>
+          <h3 class="text-xl font-bold mb-2">JS Welding Works</h3>
+          <p class="text-sm text-center mb-3">A responsive website for a local welding service.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">HTML</span>
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">CSS</span>
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">Bootstrap</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://js-welding-works.web.app/" class="px-4 py-2 rounded bg-primary text-white font-semibold hover:bg-yellow-400 hover:text-slate-900 transition">Live Demo</a>
+            <!-- <a href="#" class="px-4 py-2 rounded bg-slate-800 text-white font-semibold hover:bg-primary transition">GitHub</a> -->
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-glass dark:bg-glassDark backdrop-blur rounded-2xl shadow-xl p-6 flex flex-col items-center hover:scale-105 hover:shadow-2xl hover:-rotate-2 transition-transform duration-300 group" data-aos="fade-up" data-aos-delay="300">
+          <img src="img2.png" alt="Kumar Plantation" class="rounded-xl w-full h-40 object-cover mb-4 border-2 border-primary/30 group-hover:border-yellow-400 transition"/>
+          <h3 class="text-xl font-bold mb-2">Kumar Plantation</h3>
+          <p class="text-sm text-center mb-3">A progressive web app to manage worker data, using Firebase.</p>
+          <div class="flex gap-2 mb-4">
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">PWA</span>
+            <span class="px-2 py-1 rounded bg-primary/20 text-primary text-xs">Firebase</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://kumarnur.netlify.app/" class="px-4 py-2 rounded bg-primary text-white font-semibold hover:bg-yellow-400 hover:text-slate-900 transition">Live Demo</a>
+            <!-- <a href="#" class="px-4 py-2 rounded bg-slate-800 text-white font-semibold hover:bg-primary transition">GitHub</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-3xl mx-auto py-12 md:py-20 px-4 sm:px-2 text-center" data-aos="zoom-in">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Want to work together?</h2>
+    <p class="mb-6 md:mb-8 text-base md:text-lg">Let's build something amazing! Reach out via email or connect on LinkedIn/GitHub.</p>
+    <div class="flex gap-4 mb-6 md:mb-8 justify-center" data-aos="fade-up" data-aos-delay="200">
+      <a href="mailto:suriyajeya555@gmail.com" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/jeya-suriya21/" target="_blank" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/MJ-suriya" target="_blank" class="text-2xl p-3 rounded-full bg-glass dark:bg-glassDark backdrop-blur hover:scale-125 hover:bg-primary hover:text-white transition-transform duration-300"><i class="fab fa-github"></i></a>
+    </div>
+    <form action="https://formspree.io/f/mdkdobgj" method="POST" class="max-w-xl mx-auto mb-6 md:mb-8" data-aos="fade-up" data-aos-delay="100">
+      <div class="mb-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-glass dark:bg-glassDark text-slate-100 border border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary text-base md:text-lg"/>
+      </div>
+      <div class="mb-4">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-glass dark:bg-glassDark text-slate-100 border border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary text-base md:text-lg"/>
+      </div>
+      <div class="mb-4">
+        <textarea name="message" placeholder="Your Message" required class="w-full px-4 py-3 rounded-lg bg-glass dark:bg-glassDark text-slate-100 border border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary text-base md:text-lg" rows="4"></textarea>
+      </div>
+      <button type="submit" class="w-full px-8 py-3 rounded-full bg-primary text-white font-semibold text-base md:text-lg shadow-lg hover:scale-110 hover:bg-yellow-400 hover:text-slate-900 transition-transform duration-200"><i class="fa-solid fa-paper-plane mr-2"></i>Send Message</button>
+    </form>
+    <a href="assets/JeyaSuriya_Resume.pdf" class="inline-block w-full sm:w-auto px-6 py-3 rounded-full bg-primary text-white font-semibold text-base md:text-lg shadow-lg hover:scale-110 hover:bg-yellow-400 hover:text-slate-900 transition-transform duration-200 mb-4" download><i class="fa-solid fa-download mr-2"></i>Download Resume</a>
+    <div class="mt-6 md:mt-8 text-slate-400 text-sm md:text-base">Thanks for visiting! 😊</div>
+  </section>
+
+  <!-- WhatsApp CTA for mobile -->
+  <a href="https://wa.me/919360614261" class="fixed bottom-4 right-4 z-50 bg-green-500 text-white rounded-full shadow-lg p-4 flex items-center justify-center text-3xl md:hidden hover:bg-green-600 transition mobile-bounce" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-slate-400 text-sm">
+    &copy; <span id="year"></span> Jeya Suriya. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>AOS.init({ once: false, duration: 900, offset: 80 });
+  // Set year in footer
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('year').textContent = new Date().getFullYear();
+  });
+  </script>
+</body>
+</html> 
