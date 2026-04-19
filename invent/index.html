@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TKC Stock Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* animated background waves */
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.05);
+      border-radius: 40%;
+      animation: waveMove 12s infinite linear;
+    }
+
+    .wave:nth-child(1) {
+      top: -60%;
+      left: -50%;
+    }
+
+    .wave:nth-child(2) {
+      top: -70%;
+      left: -30%;
+      animation-duration: 18s;
+    }
+
+    @keyframes waveMove {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* glass card */
+    .login-card {
+      position: relative;
+      backdrop-filter: blur(15px);
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 35px;
+      width: 340px;
+      color: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .form-control {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+    }
+
+    .form-control::placeholder {
+      color: #ddd;
+    }
+
+    .form-control:focus {
+      background: rgba(255,255,255,0.3);
+      box-shadow: none;
+      color: white;
+    }
+
+    .btn-login {
+      background: #00c6ff;
+      border: none;
+      font-weight: 500;
+    }
+
+    .btn-login:hover {
+      background: #0096c7;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- animated waves -->
+<div class="wave"></div>
+<div class="wave"></div>
+
+<!-- login card -->
+<div class="login-card">
+
+  <div class="title">TKC Stock Management</div>
+  <div class="subtitle">Inventory System Login</div>
+
+  <input id="username" class="form-control mb-3" placeholder="Username">
+  <input id="password" type="password" class="form-control mb-3" placeholder="Password">
+
+  <button class="btn btn-login w-100" onclick="login()">Login</button>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
